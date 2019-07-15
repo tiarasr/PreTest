@@ -1,0 +1,38 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.UUID;
+
+public class RegistTest  {
+    public static void main(String[] args) {
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://www.facebook.com");
+        WebElement link = driver.findElement(By.cssSelector("[data-name='Daftar']"));
+        link.click();
+        
+        final String NamaDepan = NamaDepan();
+       	WebElement NamaDepan = driver.findElement(By.id("Daftar-namadepan"));
+        NamaDepan.sendKeys(Tiara);
+    	
+        final String NamaBelakang = NamaBelakang();
+        WebElement NamaBelakang = driver.findElement(By.id("Daftar-NamaBelakang"));
+	      NamaBelakang.sendKeys(Ayu);
+
+        final String NoTelp = NoTelp();
+        WebElement NoTelp = driver.findElement(By.id("Daftar-NoTelp"));
+	      NoTelp.sendKeys("082134567890");
+	
+	      final String JK = JK();
+        WebElement JK = driver.findElement(By.id("Daftar-JK"));
+        JK.sendKeys();
+
+        WebElement password = driver.findElement(By.id("password"));
+        password.sendKeys("Test123456");
+
+        password.submit();
+        driver.quit();
+    }
+
